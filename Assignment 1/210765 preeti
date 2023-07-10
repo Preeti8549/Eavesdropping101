@@ -1,0 +1,16 @@
+def solve(A):
+ result = ""
+ key = "rnmpxc"
+ j = 0
+ for i in range(len(A)):
+ if A[i].islower():
+ x = (ord(A[i]) - ord(key[j % 6]) + 26) % 26
+ x = chr(x + ord('a'))
+ result += x
+ j += 1
+ else:
+ result += A[i]
+ return result
+A = "tbzvoclymifqef, kdr jriq ioklzbwbf, vzqgdgu iurqqivajp, fvsqpqket fwb wesmieqd
+B = solve(A)
+print(B)
